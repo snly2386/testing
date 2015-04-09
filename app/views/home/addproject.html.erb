@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Add Project</h1>
+  <%= form_for(:project, url: {action: "createproject"}, :html => { :multipart => true }) do |f| %>
+    Project Title:<br>
+    <input type="text" name="ptitle"><br>
+    Project Category:<br>
+    <input type="text" name="pcategory"><br>
+    About Project:<br>
+    <input type="text" name="pabout"><br>
+    Project Image:<br>
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+  <% end %>
+</body>
+</html>
