@@ -11,6 +11,11 @@
  * file per style scope.
  *
  *= require bootstrap.min.css
- *= require_tree .
+ *= require material-design-iconic-font.min.css
+ *= require ionicons.min.css
+ *= require owl.carousel.css
+ *= require owl.theme.default.css
+ *= require style.css
+ 
  *= require_self
  */

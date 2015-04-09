@@ -10,7 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery-1.11.2.min.js
+//= require bootstrap.min.js
+//= require jquery.inview.min.js
+//= require jquery.knob.min.js
+//= require owl.carousel.min.js
+//= require isotope.pkgd.min.js
+//= require imagesloaded.pkgd.min.js
+//= require scripts.js
