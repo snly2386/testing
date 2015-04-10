@@ -12,3 +12,6 @@
 !/log/.keep
 /tmp
 aws.rb
+
+.env
+.env-aws
