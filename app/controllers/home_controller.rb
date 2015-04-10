@@ -29,6 +29,7 @@ class HomeController < ApplicationController
     @theTitle = params[:ptitle]
     @theCategory = params[:pcategory]
     @theAbout = params[:pabout]
+    @theURL = params[:purl]
 
     @theProject = Project.new
 
@@ -36,8 +37,12 @@ class HomeController < ApplicationController
     @theProject.category = @theCategory
     @theProject.about = @theAbout
     @theProject.image_url = @picurl
+    @theProject.theurl = @theURL
 
     @theProject.save
+  end
 
+  def singleportfolio
+    @theProject = Project.find(params[:id])
   end
 end
