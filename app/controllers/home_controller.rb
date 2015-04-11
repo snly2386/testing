@@ -49,5 +49,9 @@ class HomeController < ApplicationController
 
   def submitcontactform
     UserMailer.welcome_email(params[:cname], params[:cmessage], params[:cemail]).deliver_now
+    respond_to do |format|
+      format.html {redirect_to root_url}
+      format.json {}
+    end
   end
 end

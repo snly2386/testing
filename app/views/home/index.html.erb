@@ -505,9 +505,10 @@
           $.ajax({
               type: "POST",
               url: "../home/submitcontactform", //sumbits it to the given url of the form
-              data: valuesToSubmit
+              data: valuesToSubmit,  
               success: function() {
                 console.log("YAYYYYY")
+                $('form input, form textarea').val("")
               }
           });
       });
