@@ -1,5 +1,6 @@
 require 'aws-sdk-v1'
 class HomeController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
     @projects = Project.all
   end
@@ -44,5 +45,9 @@ class HomeController < ApplicationController
 
   def singleportfolio
     @theProject = Project.find(params[:id])
+  end
+
+  def submitcontactform
+    UserMailer.welcome_email(params[:cname], params[:cmessage], params[:cemail]).deliver_now
   end
 end

@@ -423,23 +423,23 @@
               </div>
               <div class="col-sm-7">
                 <h5>Contact Form</h5>
-                <form action="https://raw.githubusercontent.com/drewg233/PersonalSite2015/master/scripts/contact.php" method="post" class="form-horizontal contact-form">
+                <form id="emailform" action="../home/submitcontactform" method="post" class="form-horizontal contact-form">
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-10">
-                      <input type="text" class="contact-name" name="contact-name" />
+                      <input type="text" class="contact-name" name="cname" />
                     </div> <!-- end .col-sm-10 -->
                   </div> <!-- end .form-group -->
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
-                      <input type="email" class="contact-email" name="contact-email" />
+                      <input type="email" class="contact-email" name="cemail" />
                     </div> <!-- end .col-sm-10 -->
                   </div> <!-- end .form-group -->
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Message</label>
                     <div class="col-sm-10">
-                      <textarea name="contact-message" class="contact-message" rows="3"></textarea>
+                      <textarea name="cmessage" class="contact-message" rows="3"></textarea>
                     </div> <!-- end .col-sm-10 -->
                   </div> <!-- end .form-group -->
                   <div class="form-group">
@@ -497,6 +497,21 @@
 
     <!-- SmoothScroll -->
     <script src="http://wpmines.com/demos/sility/js/smoothscroll.js"></script>
+
+    <script type="text/javascript">
+      $('#emailform').submit(function(e) {
+          e.preventDefault();
+          var valuesToSubmit = $(this).serialize();
+          $.ajax({
+              type: "POST",
+              url: "../home/submitcontactform", //sumbits it to the given url of the form
+              data: valuesToSubmit
+              success: function() {
+                console.log("YAYYYYY")
+              }
+          });
+      });
+    </script>
 
   </body>
 </html>

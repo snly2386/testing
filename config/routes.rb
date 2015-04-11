@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'home/addproject'
   post 'home/createproject'
   get 'home/singleportfolio/:id' => 'home#singleportfolio'
+  post 'home/submitcontactform'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
